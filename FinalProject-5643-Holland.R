@@ -255,12 +255,7 @@ print(data.frame(
   Accuracy = c(train_accuracy, test_accuracy, baseline_accuracy)
 ))
 
-# Additional portfolio diagnostics: inspect each class instead of relying
+# Additional diagnostics: inspect each class instead of relying
 # only on overall accuracy, which can obscure minority-class performance.
 print(table(Predicted = test_predictions, Actual = test$Diabetes_012))
 print(caret::confusionMatrix(test_predictions, test$Diabetes_012))
-
-# Interpretation:
-# Compare test accuracy with the majority-class baseline above.
-# Check class-specific recall and precision before drawing conclusions.
-# Similar training and test accuracy alone does not establish a useful model.
